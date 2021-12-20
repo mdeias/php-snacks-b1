@@ -6,8 +6,21 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 
 
 <?php
+function newRandomArray($min, $max, $nNumb){
+    $nuovoArray = [];
+    if (($max - $min) < $nNumb) {
+        $nNumb = $max - $min;
+    }
+    while(count($nuovoArray) < $nNumb){
+        $numero = rand($min, $max);
+        if (!in_array($numero,$nuovoArray)) {
+            $nuovoArray[] = $numero;
+        }
+    }
+    return $nuovoArray;
+}
 
-
+var_dump(newRandomArray(1,100,50));
 
 ?>
 
