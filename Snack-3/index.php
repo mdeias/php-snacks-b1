@@ -10,33 +10,30 @@ Creare un array di array. Ogni array figlio avrà come chiave una data in questo
 
 $dates = [
 
-   "10/05/2021" => [
-       'Lorem ipsum dolor sit amet.',
-       'Lorem ipsum dolor sit amet.',
-       'Lorem ipsum dolor sit amet.',
-       
-    ],
-
-    "15/07/2021" => [
-        'Lorem ipsum dolor sit amet.',
-        'Lorem ipsum dolor sit amet.',
-    ],
-
-    "20/11/2021" => [
-        'Lorem ipsum dolor sit amet.',
-    ]
-
-    ];
-
-    $key1 = "10/05/2021";
-    $key2 = "15/07/2021";
-    $key3 = "20/11/2021";
-    $maggio = $dates["10/05/2021"];
-    $luglio = $dates["15/07/2021"];
-    $novembre = $dates["20/11/2021"];
-
-    echo $dates[1];
     
+    '10/12/2021' => [
+        'Lorem ipsum dolor sit amet.',
+        'Lorem ipsum dolor sit amet.',
+        'Lorem ipsum dolor sit amet.'
+    ],
+
+    
+    '15/12/2021' => [
+        'Lorem ipsum dolor sit amet.',
+        'Lorem ipsum dolor sit amet.',
+        'Lorem ipsum dolor sit amet.'
+    ],
+    
+
+    
+    '18/12/2021' => [
+        'Lorem ipsum dolor sit amet.',
+        'Lorem ipsum dolor sit amet.',
+        'Lorem ipsum dolor sit amet.'
+    ]
+    
+
+];  
 
 ?>
 
@@ -49,18 +46,20 @@ $dates = [
     <title>Document</title>
 </head>
 <body>
-    <h1> <?php echo $key1; ?> </h1>
-    <p> <?php  for ($i=0; $i < count($maggio); $i++) { 
-        echo "<br>$maggio[$i]";
-    } ?> </p>
-    <h1> <?php echo $key2; ?> </h1>
-     <p> <?php  for ($i=0; $i < count($maggio); $i++) { 
-        echo "<br>$luglio[$i]";
-    } ?> </p>
-    <h1> <?php echo $key3; ?> </h1>
-     <p> <?php  for ($i=0; $i < count($maggio); $i++) { 
-        echo "<br>$novembre[$i]";
-    } ?> </p>
+
+    <div>
+        <?php foreach($dates as $key => $date) {?>
+        <h2><?php echo $key ?></h2>
+        <ul>
+            <?php foreach($date as $post) {?>
+            <li>
+                <?php echo $post ?>
+            </li>
+            <?php } ?>
+        </ul>
+        <?php } ?>
+    </div>
+    
 
 </body>
 </html>
